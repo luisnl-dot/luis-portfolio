@@ -98,9 +98,9 @@ export default function Hero() {
               transition={{ duration: 0.6, delay: 0.5 }}
               className="font-inter text-base text-white/50 max-w-md leading-relaxed mb-12"
             >
-              Ich baue Websites und Onlineshops, die nicht nur gut aussehen —
-              sondern verkaufen. Schnell, sauber, auf den Punkt.
-              Eine Person. Kein Overhead. Echte Resultate.
+              Veraltete Websites kosten jeden Tag Kunden.
+              Ich baue die neue Version — fertig, klickbar, in 48h.
+              Du siehst sie zuerst. Du entscheidest danach.
             </motion.p>
 
             {/* CTAs */}
@@ -113,8 +113,8 @@ export default function Hero() {
               <Button href="#contact" variant="primary">
                 Jetzt anfragen →
               </Button>
-              <Button href="#case-studies" variant="outline">
-                Projekte ansehen
+              <Button href="#process" variant="outline">
+                Wie es funktioniert
               </Button>
             </motion.div>
           </div>

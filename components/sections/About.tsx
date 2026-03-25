@@ -3,9 +3,9 @@ import AnimatedSection from "@/components/ui/AnimatedSection";
 import Button from "@/components/ui/Button";
 
 const tools = [
-  "Premiere Pro", "CapCut", "Canva", "Photoshop",
-  "Instagram", "TikTok", "Shopify", "Planable",
-  "Claude", "ChatGPT", "Midjourney", "Meta Ads",
+  "Next.js", "React", "Tailwind CSS", "Framer Motion",
+  "Shopify", "Figma", "TypeScript", "Vercel",
+  "Claude AI", "ChatGPT", "Photoshop", "Canva",
 ];
 
 export default function About() {
@@ -58,9 +58,14 @@ export default function About() {
                 und seit 2021 aktiv in der Praxis, nicht in der Theorie.
               </p>
               <p>
-                Ich habe einen Instagram-Kanal von null auf über 5.000 Follower aufgebaut,
-                eine Offroad-Brand auf 8.000+ skaliert und dabei einen Shopify-Shop
-                auf 3,23% CVR gebracht — mit unter 300€ Werbebudget im Monat.
+                Ich baue Websites und Onlineshops für kleine Unternehmen, die wissen
+                dass ihre aktuelle Seite Kunden kostet — aber keine Zeit haben,
+                sich monatelang mit einer Agentur rumzuschlagen.
+              </p>
+              <p>
+                Mein Modell: Ich baue die neue Website in 48h fertig vor.
+                Du siehst das Ergebnis bevor du irgendetwas unterschreibst.
+                Gefällt sie dir nicht — kein Problem, keine Kosten.
               </p>
               <p>
                 Ich arbeite schnell, nutze moderne KI-Tools als Verstärker,
