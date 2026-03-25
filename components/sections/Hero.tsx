@@ -3,7 +3,59 @@
 import { motion, useInView } from "framer-motion";
 import { useRef, useEffect, useState } from "react";
 import Image from "next/image";
-import Button from "@/components/ui/Button";
+
+function HeroUrlInput() {
+  const [url, setUrl] = useState("");
+  const [sent, setSent] = useState(false);
+  const [loading, setLoading] = useState(false);
+
+  async function handleSubmit(e: React.FormEvent) {
+    e.preventDefault();
+    if (!url) return;
+    setLoading(true);
+    try {
+      await fetch("https://formspree.io/f/mreogkkk", {
+        method: "POST",
+        body: JSON.stringify({ website: url, source: "Hero" }),
+        headers: { "Content-Type": "application/json", Accept: "application/json" },
+      });
+      setSent(true);
+    } catch {
+      // fallback: scroll to contact
+      document.getElementById("contact")?.scrollIntoView({ behavior: "smooth" });
+    }
+    setLoading(false);
+  }
+
+  if (sent) {
+    return (
+      <div className="flex items-center gap-3 px-5 py-3.5 rounded-xl bg-accent/10 border border-accent/30 w-fit">
+        <span className="w-2 h-2 rounded-full bg-accent animate-pulse" />
+        <span className="font-inter text-sm text-accent">Erhalten — ich melde mich in 48h!</span>
+      </div>
+    );
+  }
+
+  return (
+    <form onSubmit={handleSubmit} className="flex items-center gap-0 max-w-md">
+      <input
+        type="url"
+        value={url}
+        onChange={(e) => setUrl(e.target.value)}
+        required
+        placeholder="https://deine-website.de"
+        className="flex-1 bg-white/5 border border-white/10 border-r-0 rounded-l-xl px-4 py-3.5 font-inter text-sm text-white placeholder-white/25 focus:outline-none focus:border-accent/50 transition-colors"
+      />
+      <button
+        type="submit"
+        disabled={loading}
+        className="bg-accent text-background font-inter font-semibold text-sm px-5 py-3.5 rounded-r-xl hover:bg-accent-light transition-colors whitespace-nowrap disabled:opacity-60"
+      >
+        {loading ? "..." : "Analysieren →"}
+      </button>
+    </form>
+  );
+}
 
 function useCountUp(target: number, duration = 1800, startOnView = true) {
   const [count, setCount] = useState(0);
@@ -37,10 +89,25 @@ export default function Hero() {
   const isInView = useInView(statsRef, { once: true });
   return (
     <section className="relative min-h-screen flex flex-col justify-center overflow-hidden px-6 pt-24 pb-20">
+      {/* Dot grid background */}
+      <div
+        aria-hidden
+        className="absolute inset-0 pointer-events-none"
+        style={{
+          backgroundImage: "radial-gradient(circle, rgba(57,255,176,0.07) 1px, transparent 1px)",
+          backgroundSize: "32px 32px",
+          maskImage: "radial-gradient(ellipse 80% 80% at 50% 50%, black 40%, transparent 100%)",
+          WebkitMaskImage: "radial-gradient(ellipse 80% 80% at 50% 50%, black 40%, transparent 100%)",
+        }}
+      />
       {/* Subtle background glow */}
       <div
         aria-hidden
         className="absolute top-[-5%] left-[-10%] w-[600px] h-[600px] rounded-full bg-accent/5 blur-[150px] pointer-events-none"
+      />
+      <div
+        aria-hidden
+        className="absolute bottom-[-10%] right-[-5%] w-[400px] h-[400px] rounded-full bg-accent/3 blur-[120px] pointer-events-none"
       />
 
       <div className="relative max-w-6xl mx-auto w-full">
@@ -103,19 +170,17 @@ export default function Hero() {
               Du siehst sie zuerst. Du entscheidest danach.
             </motion.p>
 
-            {/* CTAs */}
+            {/* Hero URL input */}
             <motion.div
               initial={{ opacity: 0, y: 12 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5, delay: 0.65 }}
-              className="flex flex-wrap gap-4"
+              className="flex flex-col gap-3"
             >
-              <Button href="#contact" variant="primary">
-                Jetzt anfragen →
-              </Button>
-              <Button href="#process" variant="outline">
-                Wie es funktioniert
-              </Button>
+              <HeroUrlInput />
+              <p className="font-inter text-[11px] text-white/20">
+                Kostenlos · Unverbindlich · Antwort in 48h
+              </p>
             </motion.div>
           </div>
 
@@ -136,6 +201,16 @@ export default function Hero() {
               />
               {/* Green accent bar bottom */}
               <div className="absolute bottom-0 left-0 right-0 h-1 bg-accent" />
+              {/* Social proof badge */}
+              <div className="absolute top-4 left-4 flex items-center gap-2 bg-background/80 backdrop-blur-sm border border-white/10 px-3 py-1.5 rounded-full">
+                <span className="w-1.5 h-1.5 rounded-full bg-green-400 animate-pulse" />
+                <span className="font-inter text-[10px] text-white/60">Offen für Projekte</span>
+              </div>
+            </div>
+            {/* Floating stat badge */}
+            <div className="absolute -bottom-4 -left-4 bg-background border border-accent/30 px-4 py-2.5 rounded-xl shadow-xl">
+              <p className="font-syne font-extrabold text-accent text-lg leading-none">48h</p>
+              <p className="font-inter text-white/40 text-[10px] mt-0.5 uppercase tracking-wider">Prototyp</p>
             </div>
           </motion.div>
         </div>

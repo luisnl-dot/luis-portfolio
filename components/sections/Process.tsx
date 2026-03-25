@@ -45,6 +45,11 @@ export default function Process() {
           </h2>
         </AnimatedSection>
 
+        {/* Connecting line — desktop only */}
+        <div aria-hidden className="hidden lg:block relative mb-0">
+          <div className="absolute top-[calc(50%-1px)] left-[16.5%] right-[16.5%] h-px bg-gradient-to-r from-transparent via-accent/20 to-transparent" />
+        </div>
+
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
           {steps.map((step, i) => (
             <AnimatedSection key={step.num} delay={i * 0.12}>
