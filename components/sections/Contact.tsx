@@ -1,6 +1,7 @@
 import AnimatedSection from "@/components/ui/AnimatedSection";
 import Button from "@/components/ui/Button";
 import CalendlyEmbed from "@/components/ui/CalendlyEmbed";
+import WebsiteForm from "@/components/ui/WebsiteForm";
 
 const contactMethods = [
   {
@@ -52,19 +53,30 @@ export default function Contact() {
             </span>
           </div>
           <h2 className="font-syne font-extrabold text-[clamp(2.5rem,7vw,6rem)] leading-[0.9] tracking-tight text-white">
-            Lass uns
+            Website
             <br />
-            <span className="gradient-text">reden.</span>
+            <span className="gradient-text">einsenden.</span>
           </h2>
           <p className="font-inter text-white/50 text-lg mt-6 max-w-lg leading-relaxed">
-            Bereit wenn du es bist. Kurze Beschreibung deines Projekts — dann schauen wir,
-            ob und wie ich helfen kann.
+            Trag deine aktuelle Website ein — ich schaue sie mir an und schicke dir
+            in 48h eine fertige neue Version. Kostenlos. Unverbindlich.
           </p>
         </AnimatedSection>
 
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-start">
-          {/* Left — contact options */}
+          {/* Left — website form + contact options */}
           <div className="flex flex-col gap-4">
+
+            {/* Main form */}
+            <AnimatedSection>
+              <div className="p-6 rounded-2xl bg-surface border border-accent/20">
+                <p className="font-inter text-[11px] tracking-[0.25em] uppercase text-accent mb-5">
+                  Kostenlose Website-Analyse
+                </p>
+                <WebsiteForm />
+              </div>
+            </AnimatedSection>
+
             {contactMethods.map((method, i) => (
               <AnimatedSection key={method.label} delay={i * 0.1}>
                 <a
