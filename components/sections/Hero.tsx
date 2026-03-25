@@ -21,7 +21,6 @@ function HeroUrlInput() {
       });
       setSent(true);
     } catch {
-      // fallback: scroll to contact
       document.getElementById("contact")?.scrollIntoView({ behavior: "smooth" });
     }
     setLoading(false);
@@ -89,7 +88,6 @@ export default function Hero() {
   const isInView = useInView(statsRef, { once: true });
   return (
     <section className="relative min-h-screen flex flex-col justify-center overflow-hidden px-6 pt-24 pb-20">
-      {/* Dot grid background */}
       <div
         aria-hidden
         className="absolute inset-0 pointer-events-none"
@@ -100,22 +98,14 @@ export default function Hero() {
           WebkitMaskImage: "radial-gradient(ellipse 80% 80% at 50% 50%, black 40%, transparent 100%)",
         }}
       />
-      {/* Subtle background glow */}
-      <div
-        aria-hidden
-        className="absolute top-[-5%] left-[-10%] w-[600px] h-[600px] rounded-full bg-accent/5 blur-[150px] pointer-events-none"
-      />
-      <div
-        aria-hidden
-        className="absolute bottom-[-10%] right-[-5%] w-[400px] h-[400px] rounded-full bg-accent/3 blur-[120px] pointer-events-none"
-      />
+      <div aria-hidden className="absolute top-[-5%] left-[-10%] w-[600px] h-[600px] rounded-full bg-accent/5 blur-[150px] pointer-events-none" />
+      <div aria-hidden className="absolute bottom-[-10%] right-[-5%] w-[400px] h-[400px] rounded-full bg-accent/3 blur-[120px] pointer-events-none" />
 
       <div className="relative max-w-6xl mx-auto w-full">
         <div className="grid grid-cols-1 lg:grid-cols-[1fr_auto] gap-12 items-center">
 
           {/* Left — text block */}
           <div>
-            {/* Eyebrow */}
             <motion.div
               initial={{ opacity: 0, x: -12 }}
               animate={{ opacity: 1, x: 0 }}
@@ -128,7 +118,6 @@ export default function Hero() {
               </span>
             </motion.div>
 
-            {/* Big name headline — staggered letters */}
             <div className="mb-10" style={{ perspective: "800px" }}>
               <h1 className="font-syne font-extrabold leading-[0.88] tracking-tight text-white mb-2"
                 style={{ fontSize: "clamp(4rem, 11vw, 9rem)" }}>
@@ -167,7 +156,6 @@ export default function Hero() {
               </h1>
             </div>
 
-            {/* Tag line */}
             <motion.div
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
@@ -181,7 +169,6 @@ export default function Hero() {
               ))}
             </motion.div>
 
-            {/* Sub */}
             <motion.p
               initial={{ opacity: 0, y: 16 }}
               animate={{ opacity: 1, y: 0 }}
@@ -193,7 +180,6 @@ export default function Hero() {
               Du siehst sie zuerst. Du entscheidest danach.
             </motion.p>
 
-            {/* Hero URL input */}
             <motion.div
               initial={{ opacity: 0, y: 12 }}
               animate={{ opacity: 1, y: 0 }}
@@ -222,23 +208,19 @@ export default function Hero() {
                 className="object-cover object-top"
                 priority
               />
-              {/* Green accent bar bottom */}
               <div className="absolute bottom-0 left-0 right-0 h-1 bg-accent" />
-              {/* Social proof badge */}
               <div className="absolute top-4 left-4 flex items-center gap-2 bg-background/80 backdrop-blur-sm border border-white/10 px-3 py-1.5 rounded-full">
                 <span className="w-1.5 h-1.5 rounded-full bg-green-400 animate-pulse" />
                 <span className="font-inter text-[10px] text-white/60">Offen für Projekte</span>
               </div>
-            </div>
-            {/* Floating stat badge */}
-            <div className="absolute -bottom-4 -left-4 bg-background border border-accent/30 px-4 py-2.5 rounded-xl shadow-xl">
-              <p className="font-syne font-extrabold text-accent text-lg leading-none">48h</p>
-              <p className="font-inter text-white/40 text-[10px] mt-0.5 uppercase tracking-wider">Prototyp</p>
+              <div className="absolute bottom-4 left-4 bg-background/90 backdrop-blur-sm border border-accent/30 px-4 py-2.5 rounded-xl shadow-xl">
+                <p className="font-syne font-extrabold text-accent text-lg leading-none">48h</p>
+                <p className="font-inter text-white/40 text-[10px] mt-0.5 uppercase tracking-wider">Prototyp</p>
+              </div>
             </div>
           </motion.div>
         </div>
 
-        {/* Bottom stats — count-up on enter */}
         <motion.div
           ref={statsRef}
           initial={{ opacity: 0 }}
@@ -252,7 +234,6 @@ export default function Hero() {
         </motion.div>
       </div>
 
-      {/* Scroll line */}
       <motion.div
         className="absolute bottom-8 left-8 hidden md:flex flex-col items-center gap-2"
         initial={{ opacity: 0 }}
