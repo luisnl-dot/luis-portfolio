@@ -128,21 +128,44 @@ export default function Hero() {
               </span>
             </motion.div>
 
-            {/* Big name headline */}
-            <motion.div
-              initial={{ opacity: 0, y: 30 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.75, delay: 0.15, ease: [0.22, 1, 0.36, 1] }}
-            >
+            {/* Big name headline — staggered letters */}
+            <div className="mb-10" style={{ perspective: "800px" }}>
               <h1 className="font-syne font-extrabold leading-[0.88] tracking-tight text-white mb-2"
                 style={{ fontSize: "clamp(4rem, 11vw, 9rem)" }}>
-                LUIS
+                {"LUIS".split("").map((char, i) => (
+                  <motion.span
+                    key={i}
+                    initial={{ opacity: 0, y: 40, rotateX: -60 }}
+                    animate={{ opacity: 1, y: 0, rotateX: 0 }}
+                    transition={{ delay: 0.15 + i * 0.06, duration: 0.55, ease: [0.22, 1, 0.36, 1] }}
+                    style={{ display: "inline-block" }}
+                  >
+                    {char}
+                  </motion.span>
+                ))}
               </h1>
-              <h1 className="font-syne font-extrabold leading-[0.88] tracking-tight text-white mb-10"
+              <h1 className="font-syne font-extrabold leading-[0.88] tracking-tight text-white"
                 style={{ fontSize: "clamp(4rem, 11vw, 9rem)" }}>
-                NAGEL<span className="text-accent">.</span>
+                {"NAGEL".split("").map((char, i) => (
+                  <motion.span
+                    key={i}
+                    initial={{ opacity: 0, y: 40, rotateX: -60 }}
+                    animate={{ opacity: 1, y: 0, rotateX: 0 }}
+                    transition={{ delay: 0.39 + i * 0.06, duration: 0.55, ease: [0.22, 1, 0.36, 1] }}
+                    style={{ display: "inline-block" }}
+                  >
+                    {char}
+                  </motion.span>
+                ))}
+                <motion.span
+                  className="text-accent"
+                  initial={{ opacity: 0, scale: 0 }}
+                  animate={{ opacity: 1, scale: 1 }}
+                  transition={{ delay: 0.75, duration: 0.4, ease: [0.22, 1, 0.36, 1] }}
+                  style={{ display: "inline-block" }}
+                >.</motion.span>
               </h1>
-            </motion.div>
+            </div>
 
             {/* Tag line */}
             <motion.div

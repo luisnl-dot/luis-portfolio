@@ -10,10 +10,14 @@ import Contact from "@/components/sections/Contact";
 import Marquee from "@/components/ui/Marquee";
 import CursorGlow from "@/components/ui/CursorGlow";
 import FloatingWhatsApp from "@/components/ui/FloatingWhatsApp";
+import ScrollProgress from "@/components/ui/ScrollProgress";
+import StickyCTA from "@/components/ui/StickyCTA";
 
 export default function Home() {
   return (
     <>
+      <ScrollProgress />
+      <StickyCTA />
       <CursorGlow />
       <FloatingWhatsApp />
       <Navbar />
