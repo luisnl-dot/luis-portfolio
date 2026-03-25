@@ -6,14 +6,24 @@ export default function Footer() {
           LN<span className="text-accent">.</span>
         </span>
         <p className="font-inter text-xs text-white/20 text-center">
-          © {new Date().getFullYear()} Luis Nagel · Berlin, Germany
+          © {new Date().getFullYear()} Luis Nagel · Zeuthen
         </p>
-        <a
-          href="mailto:luisn.l@icloud.com"
-          className="font-inter text-xs text-white/30 hover:text-accent transition-colors"
-        >
-          luisn.l@icloud.com
-        </a>
+        <div className="flex items-center gap-4">
+          <a
+            href="mailto:luisn.l@icloud.com"
+            className="font-inter text-xs text-white/30 hover:text-accent transition-colors"
+          >
+            luisn.l@icloud.com
+          </a>
+          <span className="text-white/10">·</span>
+          <a href="/impressum" className="font-inter text-xs text-white/30 hover:text-accent transition-colors">
+            Impressum
+          </a>
+          <span className="text-white/10">·</span>
+          <a href="/datenschutz" className="font-inter text-xs text-white/30 hover:text-accent transition-colors">
+            Datenschutz
+          </a>
+        </div>
       </div>
     </footer>
   );
