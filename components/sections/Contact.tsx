@@ -1,5 +1,6 @@
 import AnimatedSection from "@/components/ui/AnimatedSection";
 import Button from "@/components/ui/Button";
+import CalendlyEmbed from "@/components/ui/CalendlyEmbed";
 
 const contactMethods = [
   {
@@ -92,17 +93,12 @@ export default function Contact() {
               </AnimatedSection>
             ))}
 
-            {/* Calendly embed placeholder */}
             <AnimatedSection delay={0.35}>
-              <div className="p-6 rounded-2xl bg-surface border border-dashed border-white/15 text-center">
-                <p className="font-inter text-xs text-white/30 mb-3 uppercase tracking-widest">Optionales Calendly-Embed</p>
-                <p className="font-inter text-xs text-white/20 leading-relaxed">
-                  Ersetze diesen Block mit deinem Calendly-Widget:<br />
-                  <code className="text-white/30">{'<!-- Calendly inline widget -->'}</code>
-                </p>
-                <Button href="https://calendly.com" target="_blank" variant="outline" className="mt-4 text-xs">
-                  Termin buchen (Calendly)
-                </Button>
+              <div className="rounded-2xl overflow-hidden border border-border">
+                <div className="px-6 pt-5 pb-3 bg-surface border-b border-border">
+                  <p className="font-inter text-xs text-white/30 uppercase tracking-widest">Termin buchen</p>
+                </div>
+                <CalendlyEmbed />
               </div>
             </AnimatedSection>
           </div>
