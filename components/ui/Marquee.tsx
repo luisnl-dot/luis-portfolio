@@ -3,15 +3,15 @@
 import { motion } from "framer-motion";
 
 const items = [
-  "SOCIAL MEDIA",
-  "CONTENT STRATEGY",
-  "VERTICAL VIDEO",
-  "CREATIVE DIRECTION",
-  "WEBSITE DEVELOPMENT",
+  "WEBDESIGN",
+  "NEXT.JS",
   "SHOPIFY",
+  "ONLINESHOP",
   "BERLIN",
-  "FORMAT ENTWICKLUNG",
-  "PAID ADS",
+  "CONVERSION",
+  "REDESIGN",
+  "MOBILE-FIRST",
+  "E-COMMERCE",
 ];
 
 export default function Marquee() {

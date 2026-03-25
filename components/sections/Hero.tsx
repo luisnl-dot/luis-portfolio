@@ -27,9 +27,9 @@ function useCountUp(target: number, duration = 1800, startOnView = true) {
 
 const stats = [
   { target: 3, suffix: "+", label: "Jahre Erfahrung" },
-  { target: 8000, suffix: "+", label: "Follower aufgebaut", display: "8.000+" },
   { target: 323, suffix: "%", label: "CVR Shopify", display: "3,23%" },
-  { target: 150, suffix: "k", label: "Views / Monat" },
+  { target: 100, suffix: "%", label: "Mobile-first" },
+  { target: 48, suffix: "h", label: "Ø Lieferzeit Prototyp" },
 ];
 
 export default function Hero() {
@@ -57,7 +57,7 @@ export default function Hero() {
             >
               <span className="w-6 h-px bg-accent" />
               <span className="font-inter text-[11px] tracking-[0.25em] uppercase text-accent">
-                Social Media Creative · Berlin
+                Webdesigner & Shopify Developer · Berlin
               </span>
             </motion.div>
 
@@ -84,7 +84,7 @@ export default function Hero() {
               transition={{ duration: 0.6, delay: 0.4 }}
               className="flex flex-wrap gap-2 mb-10"
             >
-              {["CONTENT", "STRATEGY", "PRODUCTION"].map((tag, i) => (
+              {["WEBDESIGN", "SHOPIFY", "DEVELOPMENT"].map((tag, i) => (
                 <span key={tag} className="font-inter text-[11px] tracking-[0.2em] text-white/40 uppercase">
                   {tag}{i < 2 ? <span className="text-accent mx-2">·</span> : ""}
                 </span>
@@ -98,8 +98,8 @@ export default function Hero() {
               transition={{ duration: 0.6, delay: 0.5 }}
               className="font-inter text-base text-white/50 max-w-md leading-relaxed mb-12"
             >
-              Ich baue Content-Systeme, die Marken messbar wachsen lassen —
-              von der ersten Idee bis zum messbaren Ergebnis.
+              Ich baue Websites und Onlineshops, die nicht nur gut aussehen —
+              sondern verkaufen. Schnell, sauber, auf den Punkt.
               Eine Person. Kein Overhead. Echte Resultate.
             </motion.p>
 

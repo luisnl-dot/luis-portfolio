@@ -7,28 +7,28 @@ import Button from "@/components/ui/Button";
 const services = [
   {
     num: "01",
-    title: "Social Media",
-    sub: "Instagram · TikTok",
-    description:
-      "Kein Posting-Chaos, kein leerer Redaktionsplan. Ich übernehme deine Kanäle vollständig — Strategie, Produktion, Community.",
-    items: ["Content-Strategie & Formatentwicklung", "Reel-Produktion & Feed-Design", "Community Management", "Monatliches Reporting"],
-  },
-  {
-    num: "02",
     title: "Website",
     sub: "Next.js · Tailwind · Framer Motion",
     description:
-      "Saubere, schnelle Websites die nicht nur gut aussehen — sondern konvertieren. Mobile-first. Vercel-ready.",
+      "Saubere, schnelle Websites die nicht nur gut aussehen — sondern konvertieren. Mobile-first, performance-optimiert, in Tagen nicht Wochen.",
     items: ["Design & Entwicklung", "Mobile-first & responsiv", "Performance-optimiert", "Deployment & Übergabe"],
   },
   {
-    num: "03",
-    title: "Online Shop",
+    num: "02",
+    title: "Onlineshop",
     sub: "Shopify · E-Commerce",
     description:
-      "Shop-Integration in den Markenauftritt — kein getrenntes System, eine Marke. Mit Tracking von Social bis Checkout.",
-    items: ["Shopify Setup & Branding", "Produktseiten & Checkout", "Social → Shop Tracking", "Laufende Betreuung möglich"],
-    badge: "Add-on",
+      "Shop-Design das zur Marke passt — kein generisches Template. Mit Tracking von der Produktseite bis zum Checkout.",
+    items: ["Shopify Setup & Branding", "Produktseiten & Checkout", "Conversion-Optimierung", "Laufende Betreuung möglich"],
+  },
+  {
+    num: "03",
+    title: "Redesign",
+    sub: "Bestehende Website · Refresh",
+    description:
+      "Deine Website sieht aus wie 2018? Ich modernisiere Design und Technik — ohne dass du alles neu aufbauen musst.",
+    items: ["Design-Audit & Analyse", "Modernes Redesign", "Performance-Verbesserung", "Schnelle Umsetzung"],
+    badge: "Beliebt",
   },
 ];
 
@@ -46,8 +46,8 @@ export default function Services() {
           </div>
           <h2 className="font-syne font-extrabold leading-[0.9] tracking-tight text-white"
             style={{ fontSize: "clamp(3rem, 7vw, 6rem)" }}>
-            FULL-SERVICE<br />
-            <span className="text-accent">DIGITAL MEDIA.</span>
+            WEB DER<br />
+            <span className="text-accent">VERKAUFT.</span>
           </h2>
         </AnimatedSection>
 
@@ -108,7 +108,7 @@ export default function Services() {
         {/* CTA */}
         <AnimatedSection delay={0.35} className="mt-14 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-6">
           <p className="font-inter text-sm text-white/30 max-w-sm">
-            Einzeln buchbar oder als Paket — wir reden kurz und ich sag dir was sinnvoll ist.
+            Website oder Shop — wir reden kurz und ich sag dir was sinnvoll ist.
           </p>
           <Button href="#contact" variant="primary">
             Projekt besprechen →
