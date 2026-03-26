@@ -98,8 +98,8 @@ export default function Hero() {
           WebkitMaskImage: "radial-gradient(ellipse 80% 80% at 50% 50%, black 40%, transparent 100%)",
         }}
       />
-      <div aria-hidden className="absolute top-[-5%] left-[-10%] w-[600px] h-[600px] rounded-full bg-accent/5 blur-[150px] pointer-events-none" />
-      <div aria-hidden className="absolute bottom-[-10%] right-[-5%] w-[400px] h-[400px] rounded-full bg-accent/3 blur-[120px] pointer-events-none" />
+      <div aria-hidden className="absolute top-[-5%] left-[-10%] w-[600px] h-[600px] rounded-full bg-accent/5 blur-[150px] pointer-events-none hidden sm:block" />
+      <div aria-hidden className="absolute bottom-[-10%] right-[-5%] w-[400px] h-[400px] rounded-full bg-accent/3 blur-[120px] pointer-events-none hidden sm:block" />
 
       <div className="relative max-w-6xl mx-auto w-full">
         <div className="grid grid-cols-1 lg:grid-cols-[1fr_auto] gap-12 items-center">
@@ -118,15 +118,15 @@ export default function Hero() {
               </span>
             </motion.div>
 
-            <div className="mb-10" style={{ perspective: "800px" }}>
+            <div className="mb-10">
               <h1 className="font-syne font-extrabold leading-[0.88] tracking-tight text-white mb-2"
                 style={{ fontSize: "clamp(4rem, 11vw, 9rem)" }}>
                 {"LUIS".split("").map((char, i) => (
                   <motion.span
                     key={i}
-                    initial={{ opacity: 0, y: 40, rotateX: -60 }}
-                    animate={{ opacity: 1, y: 0, rotateX: 0 }}
-                    transition={{ delay: 0.15 + i * 0.06, duration: 0.55, ease: [0.22, 1, 0.36, 1] }}
+                    initial={{ opacity: 0, y: 20 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    transition={{ delay: 0.15 + i * 0.06, duration: 0.45, ease: [0.22, 1, 0.36, 1] }}
                     style={{ display: "inline-block" }}
                   >
                     {char}
@@ -138,9 +138,9 @@ export default function Hero() {
                 {"NAGEL".split("").map((char, i) => (
                   <motion.span
                     key={i}
-                    initial={{ opacity: 0, y: 40, rotateX: -60 }}
-                    animate={{ opacity: 1, y: 0, rotateX: 0 }}
-                    transition={{ delay: 0.39 + i * 0.06, duration: 0.55, ease: [0.22, 1, 0.36, 1] }}
+                    initial={{ opacity: 0, y: 20 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    transition={{ delay: 0.39 + i * 0.06, duration: 0.45, ease: [0.22, 1, 0.36, 1] }}
                     style={{ display: "inline-block" }}
                   >
                     {char}
