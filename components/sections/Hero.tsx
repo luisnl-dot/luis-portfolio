@@ -213,10 +213,7 @@ export default function Hero() {
                 <span className="w-1.5 h-1.5 rounded-full bg-green-400 animate-pulse" />
                 <span className="font-inter text-[10px] text-white/60">Offen für Projekte</span>
               </div>
-              <div className="absolute bottom-4 left-4 bg-background/90 backdrop-blur-sm border border-accent/30 px-4 py-2.5 rounded-xl shadow-xl">
-                <p className="font-syne font-extrabold text-accent text-lg leading-none">48h</p>
-                <p className="font-inter text-white/40 text-[10px] mt-0.5 uppercase tracking-wider">Prototyp</p>
-              </div>
+
             </div>
           </motion.div>
         </div>
