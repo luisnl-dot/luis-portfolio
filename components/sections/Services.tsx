@@ -88,8 +88,10 @@ export default function Services() {
                 {/* Features */}
                 <ul className="flex flex-col gap-3 justify-center">
                   {s.items.map((item) => (
-                    <li key={item} className="flex items-center gap-3 font-inter text-sm text-white/60">
-                      <span className="w-1 h-1 rounded-full bg-accent flex-shrink-0" />
+                    <li key={item} className="flex items-center gap-3 font-inter text-sm text-white/60 group-hover:text-white/70 transition-colors">
+                      <svg className="w-3.5 h-3.5 text-accent flex-shrink-0" viewBox="0 0 14 14" fill="none">
+                        <path d="M2 7l3.5 3.5L12 3.5" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round"/>
+                      </svg>
                       {item}
                     </li>
                   ))}

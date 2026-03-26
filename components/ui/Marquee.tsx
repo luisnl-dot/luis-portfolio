@@ -27,7 +27,7 @@ export default function Marquee() {
         {doubled.map((item, i) => (
           <span
             key={i}
-            className="font-syne font-extrabold text-xs tracking-[0.25em] uppercase text-white/15"
+            className="font-syne font-extrabold text-xs tracking-[0.25em] uppercase text-white/25"
           >
             {item}
             <span className="text-accent ml-10">·</span>

@@ -59,16 +59,45 @@ export default function Pricing() {
                 </Button>
               </div>
 
-              {/* Trust signals */}
-              <div className="flex flex-wrap justify-center gap-8 pt-4 border-t border-white/6 w-full">
+              {/* Guarantee cards */}
+              <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 w-full pt-4 border-t border-white/6">
                 {[
-                  { dot: "bg-green-400", text: "Neue Projekte offen" },
-                  { dot: "bg-accent", text: "Prototyp in 48h" },
-                  { dot: "bg-white/30", text: "Kein Risiko · Kein Vertrag" },
-                ].map((item) => (
-                  <div key={item.text} className="flex items-center gap-2">
-                    <span className={`w-1.5 h-1.5 rounded-full ${item.dot}`} />
-                    <span className="font-inter text-sm text-white/40">{item.text}</span>
+                  {
+                    icon: (
+                      <svg className="w-5 h-5 text-accent" viewBox="0 0 20 20" fill="none">
+                        <path d="M10 2L3 5v5c0 4.418 2.985 8.563 7 9.951C14.015 18.563 17 14.418 17 10V5L10 2z" stroke="currentColor" strokeWidth="1.5" strokeLinejoin="round"/>
+                        <path d="M7 10l2 2 4-4" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
+                      </svg>
+                    ),
+                    label: "Kein Risiko",
+                    desc: "Kein Vertrag, keine Rechnung wenn du nicht willst",
+                  },
+                  {
+                    icon: (
+                      <svg className="w-5 h-5 text-accent" viewBox="0 0 20 20" fill="none">
+                        <circle cx="10" cy="10" r="7.5" stroke="currentColor" strokeWidth="1.5"/>
+                        <path d="M10 6v4l2.5 2.5" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round"/>
+                      </svg>
+                    ),
+                    label: "48h Prototyp",
+                    desc: "Du siehst deine neue Website bevor du entscheidest",
+                  },
+                  {
+                    icon: (
+                      <svg className="w-5 h-5 text-accent" viewBox="0 0 20 20" fill="none">
+                        <path d="M3 10l5 5L17 5" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
+                      </svg>
+                    ),
+                    label: "Kostenlos",
+                    desc: "Analyse und Prototyp sind 100% kostenlos",
+                  },
+                ].map((g) => (
+                  <div key={g.label} className="flex items-start gap-3 p-4 rounded-xl bg-white/3 border border-white/6">
+                    <div className="mt-0.5 flex-shrink-0">{g.icon}</div>
+                    <div>
+                      <p className="font-inter text-sm font-semibold text-white/80 mb-0.5">{g.label}</p>
+                      <p className="font-inter text-xs text-white/35 leading-relaxed">{g.desc}</p>
+                    </div>
                   </div>
                 ))}
               </div>

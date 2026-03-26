@@ -5,6 +5,7 @@ import Services from "@/components/sections/Services";
 import Process from "@/components/sections/Process";
 import CaseStudies from "@/components/sections/CaseStudies";
 import About from "@/components/sections/About";
+import Testimonials from "@/components/sections/Testimonials";
 import Pricing from "@/components/sections/Pricing";
 import Contact from "@/components/sections/Contact";
 import Marquee from "@/components/ui/Marquee";
@@ -28,6 +29,7 @@ export default function Home() {
         <Process />
         <Marquee />
         <CaseStudies />
+        <Testimonials />
         <About />
         <Pricing />
         <Contact />
