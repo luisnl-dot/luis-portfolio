@@ -1,19 +1,24 @@
 "use client";
 
 import { useState, useEffect } from "react";
+import { usePathname } from "next/navigation";
 import { motion, AnimatePresence } from "framer-motion";
 import Button from "@/components/ui/Button";
 
 const links = [
-  { label: "Services", href: "#services" },
-  { label: "Projekte", href: "#case-studies" },
-  { label: "Über mich", href: "#about" },
-  { label: "Kontakt", href: "#contact" },
+  { label: "Services", hash: "services" },
+  { label: "Projekte", hash: "case-studies" },
+  { label: "Über mich", hash: "about" },
+  { label: "Kontakt", hash: "contact" },
 ];
 
 export default function Navbar() {
   const [scrolled, setScrolled] = useState(false);
   const [menuOpen, setMenuOpen] = useState(false);
+  const pathname = usePathname();
+  const isHome = pathname === "/";
+
+  const href = (hash: string) => isHome ? `#${hash}` : `/#${hash}`;
 
   useEffect(() => {
     const handler = () => setScrolled(window.scrollY > 24);
@@ -34,16 +39,16 @@ export default function Navbar() {
     >
       <nav className="max-w-6xl mx-auto px-6 h-16 flex items-center justify-between">
         {/* Logo */}
-        <a href="#" className="font-syne font-extrabold text-base tracking-widest uppercase text-white hover:text-accent transition-colors">
+        <a href="/" className="font-syne font-extrabold text-base tracking-widest uppercase text-white hover:text-accent transition-colors">
           LN<span className="text-accent">.</span>
         </a>
 
         {/* Desktop links */}
         <ul className="hidden md:flex items-center gap-8">
           {links.map((link) => (
-            <li key={link.href}>
+            <li key={link.hash}>
               <a
-                href={link.href}
+                href={href(link.hash)}
                 className="font-inter text-sm text-white/60 hover:text-white transition-colors duration-200"
               >
                 {link.label}
@@ -54,7 +59,7 @@ export default function Navbar() {
 
         {/* CTA */}
         <div className="hidden md:block">
-          <Button href="#contact" variant="primary">
+          <Button href={href("contact")} variant="primary">
             Kontakt
           </Button>
         </div>
@@ -83,9 +88,9 @@ export default function Navbar() {
           >
             <ul className="flex flex-col gap-4 mb-5">
               {links.map((link) => (
-                <li key={link.href}>
+                <li key={link.hash}>
                   <a
-                    href={link.href}
+                    href={href(link.hash)}
                     className="font-inter text-sm text-white/70 hover:text-white transition-colors"
                     onClick={() => setMenuOpen(false)}
                   >
@@ -94,7 +99,7 @@ export default function Navbar() {
                 </li>
               ))}
             </ul>
-            <Button href="#contact" variant="primary" className="w-full justify-center">
+            <Button href={href("contact")} variant="primary" className="w-full justify-center">
               Kontakt
             </Button>
           </motion.div>
