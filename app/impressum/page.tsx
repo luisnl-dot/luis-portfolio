@@ -15,17 +15,44 @@ export default function Impressum() {
         <section className="space-y-6 font-inter text-white/60 text-sm leading-relaxed">
           <div>
             <h2 className="text-white font-semibold mb-1">Angaben gemäß § 5 TMG</h2>
-            <p>Luis Nagel<br />Am Pulverberg 1<br />15738 Zeuthen</p>
+            <p>
+              cotralog consulting & investment gmbh<br />
+              Puschkinallee 40<br />
+              15745 Wildau<br /><br />
+              Geschäftsführer: Juan Nagel<br />
+              Handelsregister: Amtsgericht Cottbus, HRB 9941<br />
+              Gerichtsstand: Königs Wusterhausen
+            </p>
           </div>
 
           <div>
             <h2 className="text-white font-semibold mb-1">Kontakt</h2>
-            <p>E-Mail: <a href="mailto:luisn.l@icloud.com" className="text-accent hover:underline">luisn.l@icloud.com</a></p>
+            <p>
+              Telefon: +49 3375 520953<br />
+              Mobil: +49 171 8600860<br />
+              E-Mail: <a href="mailto:info@cotralog.eu" className="text-accent hover:underline">info@cotralog.eu</a>
+            </p>
           </div>
 
           <div>
-            <h2 className="text-white font-semibold mb-1">Hinweis zur Steuernummer</h2>
-            <p>Eine Umsatzsteuer-ID liegt derzeit nicht vor, da keine gewerbliche Tätigkeit im Sinne des UStG ausgeübt wird.</p>
+            <h2 className="text-white font-semibold mb-1">Umsatzsteuer</h2>
+            <p>
+              Umsatzsteuer-Identifikationsnummer gemäß § 27a UStG:<br />
+              DE 229041523
+            </p>
+          </div>
+
+          <div>
+            <h2 className="text-white font-semibold mb-1">Finanzamt</h2>
+            <p>
+              Finanzamt Königs Wusterhausen<br />
+              Steuernummer: 049/107/03221
+            </p>
+          </div>
+
+          <div>
+            <h2 className="text-white font-semibold mb-1">Verantwortlich für den Inhalt</h2>
+            <p>Luis Nagel · luisn.l@icloud.com</p>
           </div>
 
           <div>
