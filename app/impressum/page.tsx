@@ -52,7 +52,11 @@ export default function Impressum() {
 
           <div>
             <h2 className="text-white font-semibold mb-1">Verantwortlich für den Inhalt</h2>
-            <p>Luis Nagel · luisn.l@icloud.com</p>
+            <p>
+              Luis Nagel<br />
+              Telefon: <a href="tel:+4917641114317" className="text-accent hover:underline">0176 41114317</a><br />
+              E-Mail: <a href="mailto:luisn.l@icloud.com" className="text-accent hover:underline">luisn.l@icloud.com</a>
+            </p>
           </div>
 
           <div>
